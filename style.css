@@ -1,0 +1,94 @@
+body, div {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@keyframes translateX {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position:  100vw 0px;
+  }
+}
+
+.wrapper {
+  width: 100vw;
+  margin: auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+.background {
+  width: 100vw;
+  height: 800px;
+  background: url("img/bg.png");
+  background-repeat: no-repeat; 
+}
+
+.town {
+  position: absolute;
+  bottom: -10px;
+  height: 315px;
+  width: 200vw;
+  background: url("img/town.png");
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-size: contain;
+  animation: translateX 60s infinite linear;
+}
+
+.clouds {
+  position: absolute;
+  bottom: 300px;
+  height: 315px;
+  width: 200vw;
+  background: url("img/clouds.png");
+  background-repeat: repeat-x;
+  animation: translateX 30s infinite linear;
+}
+
+.rails {
+  position: absolute;
+  bottom: -55px;
+  height: 315px;
+  width: 200vw;
+  background: url("img/rails.png");
+  background-repeat: repeat-x;
+  animation: translateX 5s infinite linear;
+}
+
+.train {
+  position: absolute;
+  bottom: -215px;
+  height: 315px;
+  width: 240px;
+  right: 0px;
+  background: url("img/train.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+@media (max-width: 580px) {
+  .background {
+    height: 200px;
+  }
+
+  .town {
+    display: none;
+  }
+
+  .clouds {
+    display: none;
+  }
+
+  .rails {
+    bottom: 400px;
+  }
+
+  .train {
+    bottom: 235px;
+  }
+}
