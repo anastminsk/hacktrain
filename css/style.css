@@ -431,6 +431,13 @@ section.faq {
   font-style: italic;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+
+  .question, .answer {
+    font-size: 14px;
+  } 
+}
+
 @media (max-width: 480px) {
 
   .question, .answer {
