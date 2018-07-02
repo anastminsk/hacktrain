@@ -18,7 +18,7 @@ section.user-info {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px auto 25px auto;
+  margin: 20px auto 500px auto;
 }
 
 .imaguru-logo img {
@@ -77,7 +77,7 @@ section.user-info {
     flex-direction: column;
     box-sizing: border-box;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 300px;
   }
 
   .imaguru-logo {
@@ -100,7 +100,7 @@ section.user-info {
     flex-direction: column;
     box-sizing: border-box;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 100px;
   }
 
   .imaguru-logo {
@@ -134,32 +134,6 @@ section.user-info {
     font-size: 16px;
   }
 }
-
-section.slider {
-  width: 100vw;
-  background: #fff;
-  overflow: hidden;
-}
-
-/*section.slider {
-  width: 100%;
-  min-height: 800px;
-  background: #f6f3ec url("../img/bg.png") 100% 0 no-repeat;
-}
-
-@media (min-width: 480px) and (max-width: 1200px) {
-
-  section.slider {
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  section.slider {
-    display: none;
-  }
-}*/
 
 main {
   display: flex;
@@ -553,35 +527,41 @@ section.load-partners {
 
 /*************** Animation *****************/
 
-@keyframes translateX {
-  0% {
-    background-position: 0px 0px;
-  }
-
-  100% {
-    background-position:  100vw 0px;
-  }
-}
-
-.wrapper {
-  width: 100vw;
-  margin: auto;
+section.slider {
+  width: 100%;
   background: #fff;
   overflow: hidden;
 }
 
-.background {
-  width: 100vw;
-  height: 800px;
-  background: url("../img/bg.png");
-  background-repeat: no-repeat; 
+@keyframes translateX {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes translateY {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 0 10px;
+  }
+
+  100% {
+    background-position: 0 -5px;
+  }
 }
 
 .town {
   position: absolute;
-  bottom: -310px;
+  top: 450px;
   height: 215px;
-  width: 200vw;
+  width: 100%;
   background: url("../img/town.png");
   background-repeat: repeat-x;
   background-position: top center;
@@ -591,9 +571,9 @@ section.load-partners {
 
 .clouds {
   position: absolute;
-  bottom: 60px;
-  height: 315px;
-  width: 200vw;
+  top: 200px;
+  height: 350px;
+  width: 100%;
   background: url("../img/clouds.png");
   background-repeat: repeat-x;
   animation: translateX 30s infinite linear;
@@ -601,9 +581,9 @@ section.load-partners {
 
 .rails {
   position: absolute;
-  bottom: -370px;
+  top: 415px;
   height: 315px;
-  width: 200vw;
+  width: 100%;
   background: url("../img/rails.png");
   background-repeat: repeat-x;
   animation: translateX 5s infinite linear;
@@ -611,19 +591,55 @@ section.load-partners {
 
 .train {
   position: absolute;
-  bottom: -530px;
+  top: 580px;
   height: 315px;
   width: 240px;
-  right: 0px;
+  right: 0;
   background: url("../img/train.png");
   background-repeat: no-repeat;
   background-position: top right;
 }
 
-@media (max-width: 580px) {
-  .background {
-    height: 200px;
+@media (min-width: 768px) and (max-width: 1200px) {
+
+  .town {
+    top: 600px;
   }
+
+  .clouds {
+    top: 350px;
+  }
+
+  .rails {
+    top: 565px;
+  }
+
+  .train {
+    top: 730px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+
+  .town {
+    display: none;
+  }
+
+  .clouds {
+    top: 350px;
+  }
+
+  .rails {
+    top: 565px;
+  }
+
+  .train {
+    top: 730px;
+  }
+}
+
+
+@media (max-width: 480px) {
 
   .town {
     display: none;
@@ -634,10 +650,12 @@ section.load-partners {
   }
 
   .rails {
-    bottom: 400px;
+    top: 250px;
+    animation-duration: 0s;
   }
 
   .train {
-    bottom: 235px;
+    top: 415px;
+    animation: translateY 2s infinite linear;
   }
 }
